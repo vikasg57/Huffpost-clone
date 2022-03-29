@@ -8,7 +8,7 @@ export const Navbar = () => {
     const [navbar, setnavbar] = useState(false)
     window.addEventListener('scroll',(e)=>{
 
-        if(window.pageYOffset>55){
+        if(window.pageYOffset>58){
         setnavbar(true)
 
         }

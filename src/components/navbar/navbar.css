@@ -48,12 +48,13 @@
         visibility: hidden;
          display: flex;
          width: 15%;
+       
      
        
 }
 .showlogo{
     visibility: visible;
-    transition: 1s ease-in;
+    
   
 }
 
