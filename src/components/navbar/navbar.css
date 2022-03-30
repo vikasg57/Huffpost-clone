@@ -1,3 +1,6 @@
+
+
+
 .navbar__upper{
 
     display: flex;
@@ -13,7 +16,8 @@
 .navbar__lower{
     display: flex;
     background-color: black;
-    border-top: 1px solid gray;
+
+    border-top: 1px solid rgba(253, 247, 247, 0.171);
     color: white;
     padding: 10px;
   
@@ -26,8 +30,8 @@
     background-color: black;
     align-items: center;
     justify-content: space-between;
-    width: 50%;
-     margin: auto;
+    width: 60%;
+  
    
 }
 .subnav__item{
@@ -135,4 +139,18 @@ display: flex;
 
 .navbar__container{
     width: 100%;
+}
+.navbar__sidebar{
+    width: 500px;
+    height: 900px;
+    border: 1px solid red;
+    position: absolute;
+    margin-top:-100px
+}
+.sidebar__hidden{
+    display: none
+}
+
+svg{
+    color: white;
 }

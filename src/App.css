@@ -1,3 +1,9 @@
+@font-face {
+  font-family: ProximaNovo;
+  src: url('./Fonts/Proxima-Nova-Font/Proxima\ Nova\ Font.otf');
+}
+
+
 .App {
   text-align: center;
   font-family:Verdana, Geneva, Tahoma, sans-serif
