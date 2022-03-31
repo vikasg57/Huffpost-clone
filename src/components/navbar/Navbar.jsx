@@ -4,10 +4,10 @@ import {FaBars } from "react-icons/fa";
 import{HiX} from "react-icons/hi"
 import{motion} from"framer-motion"
 
-export const Navbar = () => {
+export const Navbar = ({state}) => {
 
     const [navbar, setnavbar] = useState(false)
-    const [sidebar, setsidebar] = useState(false)
+
     window.addEventListener('scroll',(e)=>{
 
         if(window.pageYOffset>58){
@@ -28,7 +28,7 @@ export const Navbar = () => {
 
     <div className='navbar__upper'>
         <div  className='navbar__container_leftsymbol'>
-            <FaBars onClick={()=>(setsidebar(true))} />
+            <FaBars onClick={()=>(state())} />
 
         </div>
         <div className='navbar__container_mainlogo'>
@@ -58,7 +58,7 @@ export const Navbar = () => {
 
     </div>
       </header>
-       <motion.div
+       {/* <motion.div
               whileInView={{x:[-400,0]}}
               transition= {{duration:0.85,ease:'easeInOut'}}
              className={sidebar?'navbar__sidebar':'navbar__sidebar sidebar__hidden'}
@@ -71,7 +71,7 @@ export const Navbar = () => {
 
                 vikas
 
-           </motion.div>
+           </motion.div> */}
 
       <h1>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Provident, at explicabo incidunt sit veniam omnis quo quae laborum? Nesciunt excepturi recusandae, laborum dignissimos odio expedita tempora accusantium laboriosam voluptatum tenetur.  Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus beatae, dolorem quae quia a vel cupiditate ipsam voluptatibus illo quo, magni minima sint. Ea hic qui voluptates expedita? Commodi sed eos nihil dolores, quidem doloremque modi alias quasi. Sapiente quis doloremque asperiores iste. Eaque nesciunt reiciendis dignissimos pariatur? Aliquam aliquid, repudiandae similique quisquam illo aperiam voluptates, veritatis adipisci, accusantium iste laboriosam labore nostrum expedita eum. Aliquam, illum commodi libero harum assumenda voluptatum natus id repellat asperiores distinctio ab! Quaerat natus temporibus saepe maiores quasi, rem veniam reprehenderit totam debitis, laboriosam repellendus veritatis eligendi! Quibusdam, sint nesciunt ea repudiandae ducimus sapiente corrupti, animi, rem consequatur deserunt earum corporis assumenda soluta id? Temporibus sapiente corporis beatae ipsam similique dolores vero ipsum facere cumque asperiores excepturi maiores iure harum numquam quos exercitationem vitae officia maxime rerum, non ducimus magni, hic odit! Odit, nostrum dignissimos. Dignissimos explicabo minima voluptatibus tenetur omnis ad sed, aliquam dicta saepe id, doloribus molestiae corrupti, quod vero esse nostrum facilis officiis incidunt harum exercitationem ea placeat labore. Odit minima tenetur officiis architecto quaerat consequatur. Neque deleniti fugit ratione! Eligendi aspernatur cum minima ratione sapiente enim necessitatibus cumque nemo earum aliquid? Laboriosam eveniet hic voluptatem reiciendis, iste nihil totam nulla dolores rem ratione perspiciatis mollitia illum dolore, officiis laudantium iusto molestiae excepturi possimus deserunt tempora. Rem, repellendus sequi? Placeat saepe architecto totam deleniti ea minima, quam provident fugit numquam commodi impedit dolorem ullam repellat, quis in distinctio similique dolorum eaque! Error, natus velit. Ullam eum enim eius, sapiente blanditiis ab hic numquam veritatis nemo quisquam vel ex sequi impedit? Ipsam sint quod enim, consequatur nostrum natus facilis esse ipsa! Repudiandae officiis eligendi quia fugit praesentium maiores quibusdam est. Eaque, impedit a repudiandae esse ad in doloremque consequuntur voluptatum adipisci, ipsum, rem expedita eum saepe consequatur praesentium facere ullam minima cupiditate iusto ea. Labore eum magnam fuga repellat tempora vitae nobis enim atque aspernatur nihil. Ullam hic sint fugiat iste nulla veniam asperiores fugit eos, expedita sapiente temporibus, provident dignissimos porro veritatis maxime reprehenderit incidunt excepturi quisquam repellat aliquid suscipit. Suscipit explicabo nisi itaque similique porro esse aspernatur numquam iste nulla expedita voluptatum excepturi quos fugiat, animi libero error illum nihil? Praesentium nisi dolores, veniam asperiores, repellendus neque dolor vel esse velit quo at, repudiandae laudantium dolorum vitae iure assumenda ea. Dolorem cupiditate sit quis eligendi, ullam dolor cumque esse in porro soluta aliquam amet necessitatibus officia possimus impedit error reiciendis facere ab, corrupti ad aperiam odit, vero rem sequi? Quis possimus officia, alias velit atque iste sit obcaecati ipsam vero mollitia magni hic libero dolorem reiciendis pariatur, magnam iure minima minus. Ab, soluta? Quas aspernatur delectus pariatur omnis doloribus eum eveniet non facere animi architecto tenetur amet explicabo beatae iure sequi, nulla soluta facilis debitis tempore corrupti exercitationem? Unde molestias, earum corporis commodi numquam accusantium quae dignissimos voluptas nesciunt mollitia voluptatem aliquam sapiente asperiores. Illum eaque sit placeat hic atque, recusandae culpa. Nemo corporis ratione assumenda, eveniet distinctio debitis at incidunt, facere qui consequuntur sunt voluptate quaerat excepturi, sapiente sequi.</h1>
       </>

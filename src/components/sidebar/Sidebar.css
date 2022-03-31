@@ -1,0 +1,32 @@
+
+.navbar__sidebar {
+  background-color: rgb(25, 25, 25);
+
+
+}
+
+
+
+.sidebar__hidden{
+   display: none; 
+   flex:0;
+ 
+  
+}
+
+.sidebar__visible {
+display: block; 
+flex:3;
+ 
+
+}
+
+.navbar__sidebar>svg {
+  color: white
+ }
+
+
+.App__child{
+
+  flex:9;
+}

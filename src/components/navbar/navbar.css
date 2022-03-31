@@ -143,22 +143,3 @@ display: flex;
 }
 
 
-.navbar__container{
-    width: 100%;
-}
-.navbar__sidebar{
-    width: 500px;
-    height: 1000px;
- 
-    position: absolute;
-    margin-top:-100px;
-    background-color:rgb(25, 25, 25);
-}
-.sidebar__hidden{
-    display: none
-}
-
-.navbar__sidebar>svg{
-    color: white
-
-}

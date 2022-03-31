@@ -1,21 +1,30 @@
 import './App.css';
-
+import React from 'react';
 import  {Navbar}  from './components/navbar/Navbar';
 import {Footer} from "./components/footer/Footer"
+import{HiX} from "react-icons/hi"
+import{motion} from"framer-motion"
+import{Sidebar} from "./components/sidebar/Sidebar"
 
 function App() {
+   const [sidebar, setsidebar] = React.useState(false)
+
+   const togglestate=()=>{
+     setsidebar(!sidebar)
+   }
+
   return (
     <div className="App"
     >
 
-      <Navbar/>
+      <Sidebar sidebar={sidebar} togglestate={togglestate}/>
+      <div className="App__child">
+      <Navbar state={togglestate}/>       
+      <Footer/>
+      </div>
+
 
      
-      <h1>Hello Huffpost  </h1>
-      <h1>Hello World</h1>
-      <h1>new branch created</h1>
-
-      <Footer/>
       
     </div>
   );
