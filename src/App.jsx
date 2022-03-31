@@ -1,11 +1,13 @@
+import { Routers } from './components/Routers/Routers';
 import './App.css';
 import React from 'react';
-import  {Navbar}  from './components/Navbar/Navbar';
+
 import {Footer} from "./components/Footer/Footer"
 
 import{motion} from"framer-motion"
 import{Sidebar} from "./components/Sidebar/Sidebar"
 
+import { Navbar } from './components/Navbar/Navbar';
 function App() {
    const [sidebar, setsidebar] = React.useState(false)
 
@@ -23,6 +25,10 @@ function App() {
        <Navbar state={togglestate}/>
        <Footer/>
       </div> 
+
+      
+
+      <Routers />
 
     </div>
   );
