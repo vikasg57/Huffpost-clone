@@ -69,6 +69,10 @@
     font-size: 18px;
     
 }
+.sidebar__child>div>div>a:hover{
+  text-decoration: underline;
+
+}
 .sidebar__child>div>a{
     color: white;
     text-decoration: none;
@@ -81,6 +85,10 @@
     
    
     
+}
+.sidebar__child>div>a:hover{
+  text-decoration: underline;
+
 }
 
 .child__width{
