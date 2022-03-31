@@ -19,7 +19,6 @@ export const Home = () => {
     }
 
     return <div>
-        <button onClick={getData}>Click</button>
         <div className='main-div'>
             <div className='news'>
                 <NewsContainer />
