@@ -1,3 +1,23 @@
-.App {
+.main-div{
+  padding: 0px 6%;
+  display: flex;
+  gap: 5%;
+}
+
+.news{
+  flex: 9;
+}
+
+.side-news{
+  flex: 4;
+}
+
+.news-heading{
   text-align: center;
+}
+
+.news-heading::before,
+.news-heading::after{
+  content: " / ";
+  color: #517dff;
 }
