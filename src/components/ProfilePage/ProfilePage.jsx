@@ -1,6 +1,11 @@
+import { useEffect } from "react"
 
 
 export const ProfilePage = () => {
+
+    useEffect(()=>{
+        document.title = "Account"
+    },[])
 
     return <div>
 

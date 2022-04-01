@@ -7,6 +7,7 @@ const StyledDiv = styled.div`
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 4%;
+
 `
 
 export const LifeContent = () => {

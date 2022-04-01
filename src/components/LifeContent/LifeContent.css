@@ -1,21 +1,21 @@
-.life-div{
+.life-div {
     /* border: 1px solid black; */
     text-align: center;
 }
 
-.life-content-card{
+.life-content-card {
     background-color: #e7fcff;
     /* text-align: center; */
 }
 
-.life-content-card>img{
+.life-content-card>img {
     width: 100%;
 }
 
-.life-content-card>div{
+.life-content-card>div {
     padding: 0px 3%;
 }
 
-.life-content-label{
+.life-content-label {
     color: #394bd6;
 }
