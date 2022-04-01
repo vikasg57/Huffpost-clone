@@ -1,0 +1,27 @@
+.logodiv{
+    background-color: rgb(234,234,234)  ;
+      border-radius:20px;
+}
+.login_maindiv{
+    border-radius:20px;
+    background-color:white;
+}
+.buttondiv{
+    display:flex;
+    align-items:center;
+    
+    justify-content:space-around;
+    border-bottom: 1px solid gray;
+
+}
+.buttondiv>div{
+ 
+    width: 50%;
+}
+
+.buttondiv>div:hover{
+    border-bottom:2px solid black; ;
+}
+.buttondiv>div>p{
+    cursor: pointer;
+}
