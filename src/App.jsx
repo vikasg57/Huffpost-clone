@@ -23,12 +23,16 @@ function App() {
        <Sidebar sidebar={sidebar} togglestate={togglestate}/>
        <div className={sidebar?"App__child":"App__child child__width" }>
        <Navbar state={togglestate}/>
+         <Routers />
+
+
+
        <Footer/>
       </div> 
 
       
 
-      <Routers />
+    
 
     </div>
   );

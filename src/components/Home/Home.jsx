@@ -8,6 +8,8 @@ export const Home = () => {
     // 31d2737533b64b4f8708946a39b6076b
     // GET https://newsapi.org/v2/top-headlines?country=us&apiKey=31d2737533b64b4f8708946a39b6076b
 
+    
+
     const getData = ()=>{
         axios.get("https://newsapi.org/v2/top-headlines?country=us&apiKey=31d2737533b64b4f8708946a39b6076b")
         .then(({data}) => {
