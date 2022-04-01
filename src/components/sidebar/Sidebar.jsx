@@ -147,10 +147,14 @@ export const Sidebar = ({sidebar,togglestate}) => {
          <h3> Follow Us</h3>
 
         
+        <div>
+               <RiFacebookFill/>
+               <RiTwitterFill/>
+               <RiInstagramFill/>
+
+        </div>
        
-         <RiFacebookFill/>
-           <RiTwitterFill/>
-            <RiInstagramFill/>
+     
 
         
 

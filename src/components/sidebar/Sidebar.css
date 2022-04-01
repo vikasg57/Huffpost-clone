@@ -108,3 +108,25 @@
 .sidebar__child>div{
   margin-top:20px;
 }
+
+#sidebar_lastdiv{
+
+  display:flex;
+  align-items:center;
+  margin-left: 30px;
+  color:white;
+
+
+}
+
+#sidebar_lastdiv>div{
+ 
+  width:100px;
+  display:flex;
+  
+}
+#sidebar_lastdiv>div>svg{
+  margin-left:20px;
+  color:white;
+  
+}
