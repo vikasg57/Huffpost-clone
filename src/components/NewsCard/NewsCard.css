@@ -1,5 +1,5 @@
 .news-card{
-    /* border: 1px solid black; */
+    margin-bottom: 2vw;
 }
 
 .news-card>img{
@@ -14,4 +14,5 @@
     font-weight: 700;
     margin: 0;
     margin-top: 10px;
+    text-align: justify;
 }

@@ -1,64 +1,66 @@
-        @font-face {
-            font-family: ProximaNovo;
-            src: url('./Fonts/Proxima-Nova-Font/Proxima\ Nova\ Font.otf');
-        }
-        
-        body {
-            margin: 0;
-            box-sizing: border-box;
-        }
-        
-        .App {
-            text-align: center;
-            font-family: Verdana, Geneva, Tahoma, sans-serif;
-            display: flex;
-            width: 100%;
-        }
-        
-        .main-div {
-            padding: 0px 6%;
-            display: flex;
-            gap: 5%;
-        }
-        
-        .news {
-            flex: 9;
-        }
-        
-        .side-news {
-            flex: 4;
-        }
-        
-        .news-heading {
-            text-align: center;
-            font-family: Verdana, Geneva, Tahoma, sans-serif;
-            display: flex;
-            width: 100%;
-        }
-        /* body::-webkit-scrollbar {
+@font-face {
+    font-family: ProximaNovo;
+    src: url('./Fonts/Proxima-Nova-Font/Proxima\ Nova\ Font.otf');
+}
+
+body {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.App {
+    /* text-align: center; */
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    display: flex;
+    width: 100%;
+}
+
+/* body::-webkit-scrollbar {
     display: none;
 } */
-        
-        .App__child {
-            width: 75%;
-            background-color: white;
-            transition: 0.5s width ease-out;
-            /* height:100vh;     */
-            /* overflow-y: scroll;*/
-        }
-        
-        .App__child::-webkit-scrollbar {
-            display: none;
-        }
-        
-        .child__width {
-            border: 5px solid green;
-            width: 100%;
-            transition: 0.5s width;
-        }
-        
-        .news-heading::before,
-        .news-heading::after {
-            content: " / ";
-            color: #517dff;
-        }
+
+.App__child {
+    width: 75%;
+    background-color: white;
+    transition: 0.5s width ease-out;
+    /* height:100vh;     */
+    /* overflow-y: scroll;*/
+}
+
+.App__child::-webkit-scrollbar {
+    display: none;
+}
+
+.child__width {
+    width: 100%;
+    transition: 0.5s width;
+}
+
+
+.main-div {
+    padding: 0px 6%;
+    display: flex;
+    gap: 5%;
+}
+
+.news {
+    flex: 9;
+    height: fit-content;
+}
+
+.side-news {
+    flex: 4;
+}
+
+.news h3.news-heading {
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    display: flex;
+    width: 100%;
+}
+
+.news-heading::before,
+.news-heading::after {
+    content: " / ";
+    color: #517dff;
+}

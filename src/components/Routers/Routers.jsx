@@ -2,7 +2,6 @@ import { Routes, Route } from "react-router-dom";
 import { Home } from "../Home/Home";
 import { ProfilePage } from "../ProfilePage/ProfilePage";
 import { PageNotFound } from "../PageNotFound/PageNotFound";
-import { useState } from "react";
 
 import {Login} from "../Login/Login"
 
@@ -20,10 +19,17 @@ export const Routers = () => {
         />
 
         <Route
+          path="/member"
+          element={  <MasterComponent><ProfilePage/></MasterComponent>  }
+        />
+
+        <Route path="/login" element={<Login />} />
+
+        <Route
           path="*"
           element={<MasterComponent><PageNotFound/></MasterComponent>}
         />
-        <Route path="/login" element={<Login />} />
+        
       </Routes>
     </>
   );

@@ -1,7 +1,6 @@
 .navbar__sidebar {
     background-color: rgb(25, 25, 25);
     text-align: left;
-    /* height:100vh; */
     overflow-y: scroll;
 }
 
@@ -23,7 +22,6 @@
     width: 75%;
     background-color: white;
     transition: 0.5s width ease-out;
-    /* height:100vh;     */
     overflow-y: scroll;
     overflow-x: hidden;
 }

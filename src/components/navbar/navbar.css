@@ -1,4 +1,5 @@
 .navbar__upper {
+    text-align: center;
     display: flex;
     background-color: black;
     color: white;

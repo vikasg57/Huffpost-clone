@@ -16,7 +16,7 @@ export const SideNews = ()=>{
         });
     },[])
     
-    return <div>
+    return <div className="side-news">
         <h4 className="news-heading">UKRAINE CRISIS</h4>
 
         <div>

@@ -5,8 +5,8 @@ import styled from "styled-components";
 
 const StyledDiv = styled.div`
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 4%;
+    justify-content: space-between;
+    grid-template-columns: repeat(2, 48%);
 
 `
 
@@ -24,7 +24,7 @@ export const LifeContent = () => {
     }, [])
 
 
-    return <div className="life-div">
+    return <div className="life-div news">
 
         <h1>LIFE</h1>
 

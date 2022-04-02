@@ -17,11 +17,11 @@ export const NewsContainer = () => {
 
     const Container = styled.div`
         display: grid;
-        grid-template-columns: repeat(4,1fr);
-        gap: 4%;
+        justify-content: space-between;
+        grid-template-columns: repeat(4,23%);
     `
 
-    return <div >
+    return <div className='news'>
         <h3 className='news-heading'>TOP STORIES</h3>
 
         <Container>

@@ -1,11 +1,10 @@
 .life-div {
-    /* border: 1px solid black; */
     text-align: center;
 }
 
 .life-content-card {
     background-color: #e7fcff;
-    /* text-align: center; */
+    margin-bottom: 2vw;
 }
 
 .life-content-card>img {

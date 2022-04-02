@@ -10,16 +10,16 @@ export const Home = () => {
         document.title = "HuffPost - Breaking News, U.S. and World News | HuffPost";
     },[])
 
+    // currect api token = IJt6TvU_ZHI05_joE0kUd5lXou_KXO6g0TY25_iTXCaO1Evf
     // 31d2737533b64b4f8708946a39b6076b
     // GET https://newsapi.org/v2/top-headlines?country=us&apiKey=31d2737533b64b4f8708946a39b6076b
 
     
 
     const getData = ()=>{
-        axios.get("https://newsapi.org/v2/top-headlines?country=us&apiKey=31d2737533b64b4f8708946a39b6076b")
+        axios.get("https://api.currentsapi.services/v1/latest-news?language=en&apiKey=IJt6TvU_ZHI05_joE0kUd5lXou_KXO6g0TY25_iTXCaO1Evf")
         .then(({data}) => {
-            localStorage.setItem("news-articles", JSON.stringify(data.articles));
-
+            localStorage.setItem("news-articles", JSON.stringify(data.news));
         }).catch((err) => {
             console.log(err);
         });
@@ -27,21 +27,13 @@ export const Home = () => {
 
     return <div className='home-container'>
         <div className='main-div'>
-            <div className='news'>
                 <NewsContainer />
-            </div>
-            <div className='side-news'>
                 <SideNews />
-            </div>
         </div>
 
         <div className='main-div'>
-            <div className='news'>
                 <LifeContent />
-            </div>
-            <div className='side-news'>
                 <SideNews />
-            </div>
         </div>
         
     </div>
