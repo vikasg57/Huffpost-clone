@@ -26,8 +26,14 @@
     width: 50%;
 }
 
+
+.signup_inner_div{
+      border-bottom:2px solid black; 
+
+}
+
 .buttondiv>div:hover{
-    border-bottom:2px solid black; ;
+    border-bottom:2px solid black; 
 }
 .buttondiv>div>p{
     cursor: pointer;

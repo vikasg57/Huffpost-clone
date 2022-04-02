@@ -4,14 +4,18 @@ import "./LoginForm.css"
 import styled from "styled-components";
 import { BiLock } from "react-icons/bi";
 import { AiOutlineIdcard, AiFillApple, AiFillFacebook } from "react-icons/ai";
+import axios from "axios"
+import { useNavigate } from "react-router-dom";
 
 import {FcGoogle} from "react-icons/fc"
 
 
 
-export const LoginForm = ({togglestate}) => {
+export const LoginForm = ({togglestate,GoogleSignIn,FbSignIn}) => {
 
+    const navigate = useNavigate();
     const [logindata, setlogindata] = useState("")
+    const [error, seterror] = useState("")
 
     const Button = styled.button`
     background-color:${({ theme }) =>
@@ -46,11 +50,44 @@ export const LoginForm = ({togglestate}) => {
 
     }
 
+      const getdata = async () => {
+        try {
+          const res = await axios.post(
+            "http://localhost:8000/login",
+            logindata
+          );
+
+          console.log(res);
+
+          console.log(res.data)
+
+          seterror(res.data.error);
+
+          for(let x in res.data){
+
+            if(x !== "error"){
+              navigate("/")
+
+            }
+          }
+
+
+        
+
+
+        } catch (err) {
+          console.log(err);
+        }
+      };
+
     const handlesubmit=(e)=>{
 
       e.preventDefault()
 
+      getdata()
+
       console.log(logindata)
+
 
 
     }
@@ -64,7 +101,7 @@ export const LoginForm = ({togglestate}) => {
       </div>
 
       <div className="buttondiv">
-        <div>
+        <div className="login_inner_div">
           <p onClick={() => togglestate(true)}>Log In</p>
         </div>
         <div>
@@ -76,11 +113,16 @@ export const LoginForm = ({togglestate}) => {
         <Button>
           <AiFillApple className="button_svg" /> Sign In With Apple
         </Button>
-        <Button theme={"facebook_login"}>
+        <Button theme={"facebook_login"}
+        onClick={() =>{FbSignIn()}}
+        >
           <AiFillFacebook className="button_svg" />
           Sign In With Facebook
         </Button>
-        <Button theme={"google_login"}>
+        <Button theme={"google_login"} 
+
+        onClick={()=>{GoogleSignIn()}}
+        >
           <FcGoogle className="button_svg" />
           Sign In With Google
         </Button>
@@ -115,6 +157,7 @@ export const LoginForm = ({togglestate}) => {
               onChange={handlechange}
             />
           </div>
+          {error}
 
           <a href="">Don't remember your password?</a>
         </div>
