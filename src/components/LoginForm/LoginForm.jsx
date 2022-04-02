@@ -9,7 +9,7 @@ import {FcGoogle} from "react-icons/fc"
 
 
 
-export const LoginForm = () => {
+export const LoginForm = ({togglestate}) => {
 
     const [logindata, setlogindata] = useState("")
 
@@ -26,7 +26,7 @@ export const LoginForm = () => {
     border: ${({ theme }) =>
       theme === "google_login" ? "1px solid gray" : "none"};
     font-size:13px;
-    padding: 10px 0px;
+    padding: 8px 0px;
     margin-bottom: 8px;
     cursor:pointer;
     display: flex;
@@ -65,10 +65,10 @@ export const LoginForm = () => {
 
       <div className="buttondiv">
         <div>
-          <p>Log In</p>
+          <p onClick={() => togglestate(true)}>Log In</p>
         </div>
         <div>
-          <p>Sign Up</p>
+          <p onClick={() => togglestate(false)}>Sign Up</p>
         </div>
       </div>
 
@@ -87,7 +87,7 @@ export const LoginForm = () => {
         <p>or</p>
       </div>
 
-      <form action="" onSubmit={handlesubmit} >
+      <form action="" onSubmit={handlesubmit}>
         <div className="login_form">
           <div>
             <div>
@@ -116,7 +116,7 @@ export const LoginForm = () => {
             />
           </div>
 
-          <p>Don't remember your password?</p>
+          <a href="">Don't remember your password?</a>
         </div>
         <div className="login_button">
           <input type="submit" value="LOG IN" />
