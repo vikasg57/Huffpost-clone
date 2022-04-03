@@ -1,6 +1,6 @@
 import React from 'react'
 import {useState} from "react"
-import { Footer } from "../Footer/Footer"
+import { Footer } from "../footer/Footer"
 
 import { Sidebar } from "../Sidebar/Sidebar";
 import { Navbar } from "../Navbar/Navbar";
