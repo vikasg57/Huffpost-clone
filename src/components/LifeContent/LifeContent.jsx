@@ -15,7 +15,7 @@ export const LifeContent = () => {
     const [data, setData] = useState([]);
 
     useEffect(() => {
-        axios.get("http://localhost:8080/lifeContent")
+        axios.get("https://huffpost-clone.herokuapp.com/life")
             .then(({ data }) => {
                 setData([...data])
             }).catch((err) => {
