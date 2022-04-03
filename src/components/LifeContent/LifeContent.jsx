@@ -15,12 +15,14 @@ export const LifeContent = () => {
     const [data, setData] = useState([]);
 
     useEffect(() => {
-        axios.get("http://localhost:8080/lifeContent")
-            .then(({ data }) => {
-                setData([...data])
-            }).catch((err) => {
-                console.log(err);
-            });
+        axios
+          .get("https://huffpost-clone.herokuapp.com/life")
+          .then(({ data }) => {
+            setData([...data]);
+          })
+          .catch((err) => {
+            console.log(err);
+          });
     }, [])
 
 

@@ -31,7 +31,7 @@ function NewsBody() {
   
   return (
     <div className="App">
-      <NewsList  articles={articles} />
+      <NewsList section={section}  articles={articles} />
 
       {/* <WhatHappening/>   */}
     </div>
