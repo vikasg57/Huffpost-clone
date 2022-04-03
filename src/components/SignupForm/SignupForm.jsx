@@ -5,13 +5,16 @@ import styled from "styled-components";
 import { BiLock } from "react-icons/bi";
 import { AiOutlineIdcard, AiFillApple, AiFillFacebook } from "react-icons/ai";
 import { FcGoogle } from "react-icons/fc";
+import axios from "axios"
 
 
 
-export const SignupForm = ({ togglestate }) => {
+export const SignupForm = ({ togglestate,GoogleSignIn,FbSignIn }) => {
   const [logindata, setlogindata] = useState({
       terms:"off"
   });
+  const[error,seterror]= useState("")
+
 
   const Button = styled.button`
     background-color: ${({ theme }) =>
@@ -37,31 +40,77 @@ export const SignupForm = ({ togglestate }) => {
     const { value, name } = e.target;
     console.log(name, value);
 
+
     setlogindata({
       ...logindata,
       [name]: value,
     });
   };
 
+
+  const getdata=async ()=>{
+    try{
+        
+    const res= await axios
+           .post("http://localhost:8000/register", logindata)
+
+
+           console.log(res.data)
+
+           if(res.data)
+
+           for(let x in res.data){
+
+            if(x=="user"){
+
+                alert("sign up sucessful")
+            }
+           }
+
+           
+
+           seterror(res.data)
+
+    }
+    catch(err){
+        console.log(err)
+    }
+
+  }
+
   const handlesubmit = (e) => {
+
+
     e.preventDefault();
 
-    console.log(logindata);
+    if(logindata.terms=="on"){
+
+        getdata()
+
+    }
+    else{
+      alert("Please accept terms & conditions")
+    }
+
+   
+    
   };
   return (
     <div className="login_maindiv">
       <div className="logodiv">
-        <img
-          src="https://jackswifefreda.com/wp-content/uploads/2021/06/huffpost-logo.png"
-          alt="logo"
-        />
+        <a href="/">
+          <img
+            src="https://jackswifefreda.com/wp-content/uploads/2021/06/huffpost-logo.png"
+            alt="logo"
+          />
+        </a>
       </div>
 
       <div className="buttondiv">
         <div>
           <p onClick={() => togglestate(true)}>Log In</p>
         </div>
-        <div>
+        <div className="signup_inner_div">
           <p onClick={() => togglestate(false)}>Sign Up</p>
         </div>
       </div>
@@ -70,11 +119,21 @@ export const SignupForm = ({ togglestate }) => {
         <Button>
           <AiFillApple className="button_svg" /> Sign In With Apple
         </Button>
-        <Button theme={"facebook_login"}>
+        <Button
+          theme={"facebook_login"}
+          onClick={() => {
+            FbSignIn();
+          }}
+        >
           <AiFillFacebook className="button_svg" />
           Sign In With Facebook
         </Button>
-        <Button theme={"google_login"}>
+        <Button
+          theme={"google_login"}
+          onClick={() => {
+            GoogleSignIn();
+          }}
+        >
           <FcGoogle className="button_svg" />
           Sign In With Google
         </Button>
@@ -96,6 +155,8 @@ export const SignupForm = ({ togglestate }) => {
               onChange={handlechange}
             />
           </div>
+          {error.message}
+
           <div>
             <div>
               <BiLock />
@@ -131,8 +192,8 @@ export const SignupForm = ({ togglestate }) => {
         </div>
         <div className="signup_terms">
           <p>
-            <input type="checkbox" name="terms" onChange={handlechange} />I agree to the User
-            Agreement and Privacy Policy.
+            <input type="checkbox" name="terms" onChange={handlechange} />I
+            agree to the User Agreement and Privacy Policy.
           </p>
         </div>
         <div className="login_button">

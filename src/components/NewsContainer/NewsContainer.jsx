@@ -1,7 +1,9 @@
 import axios from 'axios';
 import { useEffect, useState } from "react";
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import { NewsCard } from '../NewsCard/NewsCard';
+import './NewsContainer.css'
 
 
 export const NewsContainer = () => {
@@ -25,8 +27,12 @@ export const NewsContainer = () => {
         <h3 className='news-heading'>TOP STORIES</h3>
 
         <Container>
-            {allnews.map((ele) => {
-                return <NewsCard key={ele.id} data={ele} />
+            {[...allnews.filter(({ image }) => {
+                return image != "None"
+            })].map((ele) => {
+                return <Link to={`/entry/${ele.id}`} key={ele.id} >
+                    <NewsCard data={ele} />
+                </Link>
             })}
         </Container>
     </div>

@@ -4,8 +4,9 @@
     border-top-left-radius:10px;
     border-top-right-radius:10px;
     padding:20px 0px;
+   
 }
-.logodiv>img{
+.logodiv>a>img{
     width:90%;
 
 }
@@ -13,6 +14,8 @@
     border-radius: 10px;
     background-color:white;
     width:300px;
+     text-align:center;
+     margin: 3vw;
 }
 .buttondiv{
     display:flex;
@@ -28,7 +31,12 @@
 }
 
 .buttondiv>div:hover{
-    border-bottom:2px solid black; ;
+    border-bottom:2px solid black; 
+}
+
+.login_inner_div{
+    
+      border-bottom:2px solid black; 
 }
 .buttondiv>div>p{
     cursor: pointer;

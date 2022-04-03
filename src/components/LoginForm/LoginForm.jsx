@@ -1,25 +1,33 @@
 import React from 'react'
-import {useState} from "react"
+import { useState, useContext } from "react"
 import "./LoginForm.css"
 import styled from "styled-components";
 import { BiLock } from "react-icons/bi";
 import { AiOutlineIdcard, AiFillApple, AiFillFacebook } from "react-icons/ai";
+import axios from "axios"
+import { Link, useNavigate } from "react-router-dom";
+import { AuthContext } from "../../contexts/AuthContext"
 
-import {FcGoogle} from "react-icons/fc"
+
+import { FcGoogle } from "react-icons/fc"
 
 
 
-export const LoginForm = ({togglestate}) => {
+export const LoginForm = ({ togglestate, GoogleSignIn, FbSignIn }) => {
 
-    const [logindata, setlogindata] = useState("")
+  const { handlelogindetails } = useContext(AuthContext)
 
-    const Button = styled.button`
+  const navigate = useNavigate();
+  const [logindata, setlogindata] = useState("")
+  const [error, seterror] = useState("")
+
+  const Button = styled.button`
     background-color:${({ theme }) =>
       theme === "facebook_login"
         ? "rgb(59,89,152)"
         : theme === "google_login"
-        ? "white"
-        : "black"};
+          ? "white"
+          : "black"};
     border-radius:5px;
     color:${({ theme }) =>
       theme === "google_login" ? "black" : "white"};
@@ -32,39 +40,77 @@ export const LoginForm = ({togglestate}) => {
     display: flex;
     align-items: center; `;
 
-    const handlechange =(e)=>{
+  const handlechange = (e) => {
 
-      console.log(e)
-      const {value,name} =e.target
-      console.log(name,value)
+    console.log(e)
+    const { value, name } = e.target
+    console.log(name, value)
 
-      setlogindata({
-        ...logindata,
-        [name]:value,
-      })
+    setlogindata({
+      ...logindata,
+      [name]: value,
+    })
 
 
+  }
+
+  const getdata = async () => {
+    try {
+      const res = await axios.post(
+        "http://localhost:8000/login",
+        logindata
+      );
+
+      console.log(res);
+
+      console.log(res.data)
+
+      seterror(res.data.error);
+
+      for (let x in res.data) {
+
+        if (x !== "error") {
+
+          handlelogindetails(res.data)
+          navigate("/")
+
+        }
+      }
+
+
+
+
+
+    } catch (err) {
+      console.log(err);
     }
+  };
 
-    const handlesubmit=(e)=>{
+  const handlesubmit = (e) => {
 
-      e.preventDefault()
+    e.preventDefault()
 
-      console.log(logindata)
+    getdata()
+
+    console.log(logindata)
 
 
-    }
+
+  }
   return (
     <div className="login_maindiv">
       <div className="logodiv">
-        <img
-          src="https://jackswifefreda.com/wp-content/uploads/2021/06/huffpost-logo.png"
-          alt="logo"
-        />
+
+        <Link to="/">
+          <img
+            src="https://jackswifefreda.com/wp-content/uploads/2021/06/huffpost-logo.png"
+            alt="logo"
+          />
+        </Link>
       </div>
 
       <div className="buttondiv">
-        <div>
+        <div className="login_inner_div">
           <p onClick={() => togglestate(true)}>Log In</p>
         </div>
         <div>
@@ -76,11 +122,16 @@ export const LoginForm = ({togglestate}) => {
         <Button>
           <AiFillApple className="button_svg" /> Sign In With Apple
         </Button>
-        <Button theme={"facebook_login"}>
+        <Button theme={"facebook_login"}
+          onClick={() => { FbSignIn() }}
+        >
           <AiFillFacebook className="button_svg" />
           Sign In With Facebook
         </Button>
-        <Button theme={"google_login"}>
+        <Button theme={"google_login"}
+
+          onClick={() => { GoogleSignIn() }}
+        >
           <FcGoogle className="button_svg" />
           Sign In With Google
         </Button>
@@ -115,6 +166,7 @@ export const LoginForm = ({togglestate}) => {
               onChange={handlechange}
             />
           </div>
+          {error}
 
           <a href="">Don't remember your password?</a>
         </div>
