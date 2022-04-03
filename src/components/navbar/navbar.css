@@ -1,3 +1,8 @@
+.profile-logo{
+    width: 30%;
+    border-radius: 25px;
+}
+
 .navbar__upper {
     text-align: center;
     display: flex;

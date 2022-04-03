@@ -1,33 +1,33 @@
 import React from 'react'
-import {useState,useContext} from "react"
+import { useState, useContext } from "react"
 import "./LoginForm.css"
 import styled from "styled-components";
 import { BiLock } from "react-icons/bi";
 import { AiOutlineIdcard, AiFillApple, AiFillFacebook } from "react-icons/ai";
 import axios from "axios"
-import { useNavigate } from "react-router-dom";
-import {AuthContext} from "../../contexts/AuthContext"
+import { Link, useNavigate } from "react-router-dom";
+import { AuthContext } from "../../contexts/AuthContext"
 
 
-import {FcGoogle} from "react-icons/fc"
+import { FcGoogle } from "react-icons/fc"
 
 
 
-export const LoginForm = ({togglestate,GoogleSignIn,FbSignIn}) => {
+export const LoginForm = ({ togglestate, GoogleSignIn, FbSignIn }) => {
 
-  const {handlelogindetails}=useContext(AuthContext)
+  const { handlelogindetails } = useContext(AuthContext)
 
-    const navigate = useNavigate();
-    const [logindata, setlogindata] = useState("")
-    const [error, seterror] = useState("")
+  const navigate = useNavigate();
+  const [logindata, setlogindata] = useState("")
+  const [error, seterror] = useState("")
 
-    const Button = styled.button`
+  const Button = styled.button`
     background-color:${({ theme }) =>
       theme === "facebook_login"
         ? "rgb(59,89,152)"
         : theme === "google_login"
-        ? "white"
-        : "black"};
+          ? "white"
+          : "black"};
     border-radius:5px;
     color:${({ theme }) =>
       theme === "google_login" ? "black" : "white"};
@@ -40,19 +40,19 @@ export const LoginForm = ({togglestate,GoogleSignIn,FbSignIn}) => {
     display: flex;
     align-items: center; `;
 
-    const handlechange =(e)=>{
+  const handlechange = (e) => {
 
-      console.log(e)
-      const {value,name} =e.target
-      console.log(name,value)
+    console.log(e)
+    const { value, name } = e.target
+    console.log(name, value)
 
-      setlogindata({
-        ...logindata,
-        [name]:value,
-      })
+    setlogindata({
+      ...logindata,
+      [name]: value,
+    })
 
 
-    }
+  }
 
       const getdata = async () => {
         try {
@@ -61,52 +61,52 @@ export const LoginForm = ({togglestate,GoogleSignIn,FbSignIn}) => {
             logindata
           );
 
-          console.log(res);
+      console.log(res);
 
-          console.log(res.data)
+      console.log(res.data)
 
-          seterror(res.data.error);
+      seterror(res.data.error);
 
-          for(let x in res.data){
+      for (let x in res.data) {
 
-            if(x !== "error"){
+        if (x !== "error") {
 
-              handlelogindetails(res.data)
-              navigate("/")
+          handlelogindetails(res.data)
+          navigate("/")
 
-            }
-          }
-
-
-        
-
-
-        } catch (err) {
-          console.log(err);
         }
-      };
-
-    const handlesubmit=(e)=>{
-
-      e.preventDefault()
-
-      getdata()
-
-      console.log(logindata)
+      }
 
 
 
+
+
+    } catch (err) {
+      console.log(err);
     }
+  };
+
+  const handlesubmit = (e) => {
+
+    e.preventDefault()
+
+    getdata()
+
+    console.log(logindata)
+
+
+
+  }
   return (
     <div className="login_maindiv">
       <div className="logodiv">
 
-        <a href="/">
-        <img
-          src="https://jackswifefreda.com/wp-content/uploads/2021/06/huffpost-logo.png"
-          alt="logo"
-        />
-        </a>
+        <Link to="/">
+          <img
+            src="https://jackswifefreda.com/wp-content/uploads/2021/06/huffpost-logo.png"
+            alt="logo"
+          />
+        </Link>
       </div>
 
       <div className="buttondiv">
@@ -123,14 +123,14 @@ export const LoginForm = ({togglestate,GoogleSignIn,FbSignIn}) => {
           <AiFillApple className="button_svg" /> Sign In With Apple
         </Button>
         <Button theme={"facebook_login"}
-        onClick={() =>{FbSignIn()}}
+          onClick={() => { FbSignIn() }}
         >
           <AiFillFacebook className="button_svg" />
           Sign In With Facebook
         </Button>
-        <Button theme={"google_login"} 
+        <Button theme={"google_login"}
 
-        onClick={()=>{GoogleSignIn()}}
+          onClick={() => { GoogleSignIn() }}
         >
           <FcGoogle className="button_svg" />
           Sign In With Google

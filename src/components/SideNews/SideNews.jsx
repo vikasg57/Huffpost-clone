@@ -3,26 +3,26 @@ import { useEffect, useState } from "react"
 
 
 
-export const SideNews = ()=>{
+export const SideNews = () => {
 
     const [news, setNews] = useState([]);
 
-    useEffect(()=>{
-        axios.get("http://localhost:8080/sideNews")
-        .then(({data}) => {
-            setNews([...data]);
-        }).catch((err) => {
-            console.log(err);
-        });
-    },[])
-    
+    useEffect(() => {
+        axios.get("https://newsapi.org/v2/everything?q=ukraine&apiKey=31d2737533b64b4f8708946a39b6076b")
+            .then(({ data }) => {
+                setNews([...data.articles]);
+            }).catch((err) => {
+                console.log(err);
+            });
+    }, [])
+
     return <div className="side-news">
         <h4 className="news-heading">UKRAINE CRISIS</h4>
 
         <div>
             {
-                news.map((ele)=>{
-                    return <h3 key={ele.id}>{ele.title}</h3>
+                news.map((ele) => {
+                    return <h3 key={String(Math.random() * 10)}>{ele.title}</h3>
                 })
             }
         </div>

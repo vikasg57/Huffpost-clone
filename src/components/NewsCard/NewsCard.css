@@ -9,6 +9,9 @@
 .news-card>p:nth-child(2){
     text-transform: uppercase;
 }
+.news-card>p:nth-child(3):hover{
+    text-decoration: underline;
+}
 
 .news-card>p{
     font-weight: 700;

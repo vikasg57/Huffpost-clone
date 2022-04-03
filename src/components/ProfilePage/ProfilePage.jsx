@@ -1,8 +1,12 @@
 import { useEffect } from "react"
+import { useNavigate } from "react-router-dom";
 import { Button } from "./Button"
 
 
 export const ProfilePage = () => {
+
+    const user = JSON.parse(localStorage.getItem("logindetails")) || null;
+    const navigate = useNavigate();
 
     useEffect(() => {
         document.title = "Account"
@@ -11,14 +15,14 @@ export const ProfilePage = () => {
     return <div className="profile-div">
 
         <div className="user-div">
-            <img className="profile-pic" src="https://lh3.googleusercontent.com/a/AATXAJyUy1d0uqJtcgVB_NZofun9GEN5-CmLhLBtPD4z=s96-c" alt="" />
-            <h3 className="name">Welcome, {"Triveniprasad Gupta"}</h3>
+            <img className="profile-pic" src={user.ImageUrl} alt="" />
+            <h3 className="name">Welcome, {user.first_name}</h3>
         </div>
 
 
         <p className="left-text sub-header">Profile Info</p>
-        <p className="left-text sub-body">Name: {"Triveniprasad Gupta"}</p>
-        <p className="left-text sub-body">Email: {"iam.trivenigupta@gmail.com"}</p>
+        <p className="left-text sub-body">Name: {user.first_name}</p>
+        <p className="left-text sub-body">Email: {user.email}</p>
 
         <Button width="100%">EDIT PROFILE</Button>
 
@@ -55,7 +59,10 @@ export const ProfilePage = () => {
             Please read our FAQ if you have questions about using your account, such as logging in or leaving comments. For other questions, please contact support@huffpost.com.
         </p>
 
-        <Button width="100%" className="btn1">LOGOUT</Button>
+        <Button width="100%" className="btn1" onClick={()=>{
+            localStorage.removeItem("logindetails");
+            navigate("/");
+        }}>LOGOUT</Button>
 
     </div>
 }
