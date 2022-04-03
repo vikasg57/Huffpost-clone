@@ -71,7 +71,7 @@ export const LoginForm = ({ togglestate, GoogleSignIn, FbSignIn }) => {
 
         if (x !== "error") {
 
-          handlelogindetails(res.data)
+          handlelogindetails(res.data.user)
           navigate("/")
 
         }

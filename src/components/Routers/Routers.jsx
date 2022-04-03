@@ -31,7 +31,7 @@ export const Routers = () => {
 
         <Route path="/login" element={<Login />} />
 
-        <Route path="/news"
+        <Route path="/news/:section"
 
         element={ <MasterComponent><NewsBody/></MasterComponent>}/>
 

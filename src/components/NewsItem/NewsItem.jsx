@@ -5,10 +5,10 @@ import './newsItem.css'
 export const NewsItem = ({ title, description, url, urlToImage ,author }) => {
     return (
         
-        <div className="news-app">
+      
             
             <div className='main'>
-            <div className='news-item'>
+            <div className='news-logo'>
                 <img className='news-img' src={urlToImage} alt={urlToImage} />
 
                 </div>
@@ -19,9 +19,9 @@ export const NewsItem = ({ title, description, url, urlToImage ,author }) => {
                 <p>{description}</p>
                 <p>{author}</p>
               
-            </div></div>
-            
-        </div>
+            </div>
+            </div>
+  
         
     )
 }
