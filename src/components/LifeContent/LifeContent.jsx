@@ -15,14 +15,6 @@ export const LifeContent = () => {
     const [data, setData] = useState([]);
 
     useEffect(() => {
-<<<<<<< HEAD
-        axios.get("https://huffpost-clone.herokuapp.com/life")
-            .then(({ data }) => {
-                setData([...data])
-            }).catch((err) => {
-                console.log(err);
-            });
-=======
         axios
           .get("https://huffpost-clone.herokuapp.com/life")
           .then(({ data }) => {
@@ -31,7 +23,6 @@ export const LifeContent = () => {
           .catch((err) => {
             console.log(err);
           });
->>>>>>> d59a96d1774481b8eb46680fe15bf7b32c2f25eb
     }, [])
 
 
