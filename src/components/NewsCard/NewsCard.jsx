@@ -5,7 +5,7 @@ export const NewsCard = ({data})=>{
 
     return <div className="news-card">
         <img src={image} alt="" />
-        <p>{category}</p>
+        <p>{category[0]}</p>
         <p>{title}</p>
     </div>
 }

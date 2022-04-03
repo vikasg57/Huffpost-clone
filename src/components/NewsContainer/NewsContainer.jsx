@@ -11,9 +11,9 @@ export const NewsContainer = () => {
     const [allnews, setAllnews] = useState([]);
 
     useEffect(() => {
-        axios.get("http://localhost:8080/topStories")
+        axios.get("https://api.currentsapi.services/v1/latest-news?language=en&apiKey=IJt6TvU_ZHI05_joE0kUd5lXou_KXO6g0TY25_iTXCaO1Evf")
             .then(({ data }) => {
-                setAllnews([...data]);
+                setAllnews([...data.news]);
             });
     }, []);
 
@@ -30,7 +30,7 @@ export const NewsContainer = () => {
             {[...allnews.filter(({ image }) => {
                 return image != "None"
             })].map((ele) => {
-                return <Link to={`/entry/${ele.id}`} key={ele.id} >
+                return <Link to={`/entry/${ele.id}`} state={{ data: {ele} }} key={ele.id} >
                     <NewsCard data={ele} />
                 </Link>
             })}

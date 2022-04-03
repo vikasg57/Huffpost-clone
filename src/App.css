@@ -40,12 +40,11 @@ body {
 .main-div {
     padding: 0px 6%;
     display: flex;
-    gap: 5%;
 }
 
 .news {
     flex: 9;
-    height: fit-content;
+    margin-right: 5%;
 }
 
 .side-news {

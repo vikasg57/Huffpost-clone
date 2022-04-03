@@ -10,6 +10,9 @@ export const Home = () => {
         document.title = "HuffPost - Breaking News, U.S. and World News | HuffPost";
     },[])
 
+
+    // https://gnews.io/api/v4/top-headlines?token=API-Token
+    // gnews api: 3945cb1d1e3e3b062da1a69709c2354c
     // currect api token = IJt6TvU_ZHI05_joE0kUd5lXou_KXO6g0TY25_iTXCaO1Evf
     // 31d2737533b64b4f8708946a39b6076b
     // GET https://newsapi.org/v2/top-headlines?country=us&apiKey=31d2737533b64b4f8708946a39b6076b

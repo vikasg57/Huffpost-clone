@@ -7,6 +7,7 @@ import {Login} from "../Login/Login"
 
 
 import {MasterComponent} from "../MasterComponent/MasterComponent"
+import { NewsDetailedPage } from "../NewsDetailedPage/NewsDetailedPage";
 
 export const Routers = () => {
 
@@ -20,7 +21,7 @@ export const Routers = () => {
 
         <Route
           path="/entry/:id"
-          element={  <MasterComponent><Home/></MasterComponent>  }
+          element={  <MasterComponent><NewsDetailedPage/></MasterComponent>  }
         />
 
         <Route
