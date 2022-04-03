@@ -1,9 +1,13 @@
 .profile-logo{
     width:35px;
+    height: 35px;
     border-radius: 25px;
     margin-right: 20px;
    
 }
+/* .navbar__container{
+    
+} */
 
 .navbar__upper {
     text-align: center;
@@ -21,6 +25,7 @@
     border-top: 1px solid rgba(253, 247, 247, 0.171);
     color: white;
     padding: 10px;
+    z-index: 100;
 }
 
 .navbar__items {
@@ -65,7 +70,7 @@
 
 .navbar__container_mainlogo>a>img {
     width: 35%;
-    height: 100%;
+    /* height: 100%; */
 }
 
 @media only screen and (max-width: 600px) {

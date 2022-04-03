@@ -10,7 +10,7 @@ body {
 
 .App {
     /* text-align: center; */
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    /* font-family: Verdana, Geneva, Tahoma, sans-serif; */
     display: flex;
     width: 100%;
 }
