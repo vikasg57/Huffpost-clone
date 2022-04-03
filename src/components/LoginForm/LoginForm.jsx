@@ -1,17 +1,21 @@
 import React from 'react'
-import {useState} from "react"
+import {useState,useContext} from "react"
 import "./LoginForm.css"
 import styled from "styled-components";
 import { BiLock } from "react-icons/bi";
 import { AiOutlineIdcard, AiFillApple, AiFillFacebook } from "react-icons/ai";
 import axios from "axios"
 import { useNavigate } from "react-router-dom";
+import {AuthContext} from "../../contexts/AuthContext"
+
 
 import {FcGoogle} from "react-icons/fc"
 
 
 
 export const LoginForm = ({togglestate,GoogleSignIn,FbSignIn}) => {
+
+  const {handlelogindetails}=useContext(AuthContext)
 
     const navigate = useNavigate();
     const [logindata, setlogindata] = useState("")
@@ -66,6 +70,8 @@ export const LoginForm = ({togglestate,GoogleSignIn,FbSignIn}) => {
           for(let x in res.data){
 
             if(x !== "error"){
+
+              handlelogindetails(res.data)
               navigate("/")
 
             }
@@ -94,10 +100,13 @@ export const LoginForm = ({togglestate,GoogleSignIn,FbSignIn}) => {
   return (
     <div className="login_maindiv">
       <div className="logodiv">
+
+        <a href="/">
         <img
           src="https://jackswifefreda.com/wp-content/uploads/2021/06/huffpost-logo.png"
           alt="logo"
         />
+        </a>
       </div>
 
       <div className="buttondiv">

@@ -9,7 +9,7 @@ import axios from "axios"
 
 
 
-export const SignupForm = ({ togglestate }) => {
+export const SignupForm = ({ togglestate,GoogleSignIn,FbSignIn }) => {
   const [logindata, setlogindata] = useState({
       terms:"off"
   });
@@ -88,6 +88,9 @@ export const SignupForm = ({ togglestate }) => {
         getdata()
 
     }
+    else{
+      alert("Please accept terms & conditions")
+    }
 
    
     
@@ -95,10 +98,12 @@ export const SignupForm = ({ togglestate }) => {
   return (
     <div className="login_maindiv">
       <div className="logodiv">
-        <img
-          src="https://jackswifefreda.com/wp-content/uploads/2021/06/huffpost-logo.png"
-          alt="logo"
-        />
+        <a href="/">
+          <img
+            src="https://jackswifefreda.com/wp-content/uploads/2021/06/huffpost-logo.png"
+            alt="logo"
+          />
+        </a>
       </div>
 
       <div className="buttondiv">
@@ -114,11 +119,21 @@ export const SignupForm = ({ togglestate }) => {
         <Button>
           <AiFillApple className="button_svg" /> Sign In With Apple
         </Button>
-        <Button theme={"facebook_login"}>
+        <Button
+          theme={"facebook_login"}
+          onClick={() => {
+            FbSignIn();
+          }}
+        >
           <AiFillFacebook className="button_svg" />
           Sign In With Facebook
         </Button>
-        <Button theme={"google_login"}>
+        <Button
+          theme={"google_login"}
+          onClick={() => {
+            GoogleSignIn();
+          }}
+        >
           <FcGoogle className="button_svg" />
           Sign In With Google
         </Button>
@@ -140,7 +155,7 @@ export const SignupForm = ({ togglestate }) => {
               onChange={handlechange}
             />
           </div>
-         {error.message}
+          {error.message}
 
           <div>
             <div>

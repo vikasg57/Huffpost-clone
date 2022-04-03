@@ -4,7 +4,7 @@ import axios from 'axios'
 import "./Login.css"
 import { useNavigate } from 'react-router-dom'
 import {LoginForm} from"../LoginForm/LoginForm"
-import { useState } from 'react'
+import { useState,useContext } from 'react'
 import { SignupForm } from '../SignupForm/SignupForm'
 import { authentication } from '../../firbaseConfig'
 import {
@@ -13,11 +13,14 @@ import {
   FacebookAuthProvider,
 } from "firebase/auth";
 import { async } from '@firebase/util'
+import { AuthContext } from '../../contexts/AuthContext'
 
 
 
 export const Login = () => {
   const [toggle, settoggle] = useState(true)
+
+   const { handlelogindetails } = useContext(AuthContext);
 
   const navigate=useNavigate()
 
@@ -35,7 +38,8 @@ export const Login = () => {
             data
           );
 
-          console.log(res);     
+          console.log(res);
+              
         } catch (err) {
           console.log(err);
         }
@@ -69,6 +73,8 @@ export const Login = () => {
        console.log(googledata)
 
        getdata(googledata)
+
+       handlelogindetails(googledata)
 
        if(res.user.email!==null){
          navigate("/")
@@ -112,9 +118,17 @@ export const Login = () => {
     <div className="login_outer">
       <div className="login_inner">
         {toggle ? (
-          <LoginForm togglestate={togglestate} GoogleSignIn={GoogleSignIn} FbSignIn={FbSignIn} />
+          <LoginForm
+            togglestate={togglestate}
+            GoogleSignIn={GoogleSignIn}
+            FbSignIn={FbSignIn}
+          />
         ) : (
-          <SignupForm togglestate={togglestate} />
+          <SignupForm
+            togglestate={togglestate}
+            GoogleSignIn={GoogleSignIn}
+            FbSignIn={FbSignIn}
+          />
         )}
       </div>
     </div>
