@@ -19,6 +19,11 @@ export const Routers = () => {
         />
 
         <Route
+          path="/entry/:id"
+          element={  <MasterComponent><Home/></MasterComponent>  }
+        />
+
+        <Route
           path="/member"
           element={  <MasterComponent><ProfilePage/></MasterComponent>  }
         />
