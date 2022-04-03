@@ -113,4 +113,9 @@
 .navbar__left>:nth-child(1) {
     margin-left: 5px;
     margin-right: 5px;
+    min-width:30px;
+}
+.navbar__left>a>img{
+
+    max-width: 100%;
 }

@@ -5,12 +5,12 @@ import { NewsItem } from './NewsItem'
 
 
 
-export const NewsList = ({articles}) => {
+export const NewsList = ({articles,section}) => {
 
     console.log(articles)
     return (
         <div>
-            <div><h1 className='heading'>LATEST NEWS</h1></div>
+            <div><h1 className='heading'>{section?`${section} NEWS`:"LATEST NEWS"}</h1></div>
             
             {articles.map(article => {
                 return(
