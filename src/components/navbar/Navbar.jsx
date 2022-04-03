@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import "./Navbar.css"
+import "./navbar.css"
 import { FaBars } from "react-icons/fa";
 import { HiX } from "react-icons/hi"
 import { motion } from "framer-motion"
