@@ -34,7 +34,7 @@ export const Login = () => {
 
    
           const res = await axios.post(
-            "http://localhost:8000/googleuser",
+            "https://huffpost-clone.herokuapp.com/googleuser",
             data
           );
 

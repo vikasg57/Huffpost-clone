@@ -8,6 +8,8 @@ import {Login} from "../Login/Login"
 
 import {MasterComponent} from "../MasterComponent/MasterComponent"
 import { NewsDetailedPage } from "../NewsDetailedPage/NewsDetailedPage";
+import { NewsBody } from "../NewsItem/NewsBody";
+import { Life } from "../Life/Life";
 
 export const Routers = () => {
 
@@ -17,6 +19,10 @@ export const Routers = () => {
         <Route
           path="/"
           element={  <MasterComponent><Home/></MasterComponent>  }
+        />
+        <Route
+          path="/life"
+          element={<MasterComponent><Life/></MasterComponent>}
         />
 
         <Route
@@ -31,10 +37,16 @@ export const Routers = () => {
 
         <Route path="/login" element={<Login />} />
 
+        <Route path="/news/:section"
+
+        element={ <MasterComponent><NewsBody/></MasterComponent>}/>
+
         <Route
           path="*"
           element={<MasterComponent><PageNotFound/></MasterComponent>}
         />
+
+        
         
       </Routes>
     </>

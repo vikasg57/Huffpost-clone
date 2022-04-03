@@ -51,8 +51,10 @@ export const SignupForm = ({ togglestate,GoogleSignIn,FbSignIn }) => {
   const getdata=async ()=>{
     try{
         
-    const res= await axios
-           .post("http://localhost:8000/register", logindata)
+    const res = await axios.post(
+      "https://huffpost-clone.herokuapp.com/register",
+      logindata
+    );
 
 
            console.log(res.data)

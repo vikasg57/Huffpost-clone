@@ -54,12 +54,12 @@ export const LoginForm = ({ togglestate, GoogleSignIn, FbSignIn }) => {
 
   }
 
-  const getdata = async () => {
-    try {
-      const res = await axios.post(
-        "http://localhost:8000/login",
-        logindata
-      );
+      const getdata = async () => {
+        try {
+          const res = await axios.post(
+            "https://huffpost-clone.herokuapp.com/login",
+            logindata
+          );
 
       console.log(res);
 
@@ -71,7 +71,7 @@ export const LoginForm = ({ togglestate, GoogleSignIn, FbSignIn }) => {
 
         if (x !== "error") {
 
-          handlelogindetails(res.data)
+          handlelogindetails(res.data.user)
           navigate("/")
 
         }
