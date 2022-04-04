@@ -8,7 +8,7 @@ export const SideNews = () => {
     const [news, setNews] = useState([]);
 
     useEffect(() => {
-        axios.get("https://newsapi.org/v2/everything?q=ukraine&apiKey=9e079a8795f743688dd2eaf8e5ace105")
+        axios.get("https://newsapi.org/v2/everything?q=ukraine&apiKey=7de696f5d3d5460ab406bf8f861d9a52")
             .then(({ data }) => {
                 setNews([...data.articles]);
             }).catch((err) => {
