@@ -17,7 +17,7 @@ function NewsBody() {
     useEffect(() => {
         const getArticles = async () => {
             const response = await axios.get(
-              `https://newsapi.org/v2/everything?q=${section}&apiKey=9e30de116a7b4b63a6c21ed7eed2bc04&maxResults=10`
+              `https://newsapi.org/v2/everything?q=${section}&apiKey=191b032ad094489cbbc31195d0e1ab3f&maxResults=10`
             );
 
           //  const article= JSON.parse(localStorage.getItem("news"))
