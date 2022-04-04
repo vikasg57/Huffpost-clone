@@ -2,8 +2,8 @@ import React from 'react'
 import {useState} from "react"
 import { Footer } from "../footer/Footer"
 
-import { Sidebar } from "../Sidebar/Sidebar";
-import { Navbar } from "../Navbar/Navbar";
+import { Sidebar } from "../sidebar/Sidebar";
+import { Navbar } from "../navbar/Navbar";
 
 export const MasterComponent = ({children}) => {
 
