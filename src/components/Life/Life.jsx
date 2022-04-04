@@ -4,7 +4,7 @@ import { Top } from "./Top/Top";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import "./Life.css";
-import { Navbar } from "../Navbar/Navbar";
+import { Navbar } from "../navbar/Navbar";
 export const Life = () => {
   const [blog, setBlog] = useState([]);
   const [card, setCard] = useState([]);
