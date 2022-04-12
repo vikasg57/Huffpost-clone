@@ -3,6 +3,8 @@ import { SideNews } from '../SideNews/SideNews';
 import { LifeContent } from '../LifeContent/LifeContent';
 import axios from 'axios';
 import { useEffect } from 'react';
+import {NewsCard} from '../NewsCard/NewsCard'
+
 
 export const Home = () => {
 
@@ -28,16 +30,22 @@ export const Home = () => {
         });
     }
 
-    return <div className='home-container'>
-        <div className='main-div'>
-                <NewsContainer />
-                <SideNews />
+    return (
+      <div className="home-container">
+
+ 
+
+        <div className="main-div">
+
+      
+          <NewsContainer />
+          <SideNews />
         </div>
 
-        <div className='main-div'>
-                <LifeContent />
-                <SideNews />
+        <div className="main-div">
+          <LifeContent />
+          <SideNews />
         </div>
-        
-    </div>
+      </div>
+    );
 }

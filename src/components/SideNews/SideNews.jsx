@@ -8,12 +8,17 @@ export const SideNews = () => {
     const [news, setNews] = useState([]);
 
     useEffect(() => {
-        axios.get("https://newsapi.org/v2/everything?q=ukraine&apiKey=7de696f5d3d5460ab406bf8f861d9a52")
-            .then(({ data }) => {
-                setNews([...data.articles]);
-            }).catch((err) => {
-                console.log(err);
-            });
+        axios
+          .get(
+            "https://api.currentsapi.services/v1/search?keywords=ukraine&language=en&page_size=10&apiKey=IJt6TvU_ZHI05_joE0kUd5lXou_KXO6g0TY25_iTXCaO1Evf"
+          )
+          .then(({ data }) => {
+            setNews([...data.news]);
+            console.log("side",data.news)
+          })
+          .catch((err) => {
+            console.log(err);
+          });
     }, [])
 
     return <div className="side-news">

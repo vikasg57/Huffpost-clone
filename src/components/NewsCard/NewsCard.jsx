@@ -1,7 +1,7 @@
 import './NewsCard.css';
 
 export const NewsCard = ({data})=>{
-    const {image, category, title} = data;
+    const {image, category, title} =data;
 
     return <div className="news-card">
         <img src={image} alt="" />

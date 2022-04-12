@@ -12,7 +12,9 @@ export const NewsList = ({articles,section}) => {
         <div>
             <div><h1 className='heading'>{section?`${section} NEWS`:"LATEST NEWS"}</h1></div>
             
-            {articles.map(article => {
+            {articles.filter((article)=>{  return article.image != "None"}).
+            
+            map(article => {
                 return(
                   
                     < NewsItem 
@@ -20,7 +22,7 @@ export const NewsList = ({articles,section}) => {
                         title={article.title}
                         description={article.description}
                         url={article.url}
-                        urlToImage={article.urlToImage} 
+                        image={article.image} 
                         
                     />
                 )

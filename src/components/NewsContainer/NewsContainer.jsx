@@ -10,10 +10,13 @@ export const NewsContainer = () => {
 
     const [allnews, setAllnews] = useState([]);
 
+
     useEffect(() => {
         axios.get("https://api.currentsapi.services/v1/latest-news?language=en&apiKey=IJt6TvU_ZHI05_joE0kUd5lXou_KXO6g0TY25_iTXCaO1Evf")
             .then(({ data }) => {
                 setAllnews([...data.news]);
+            
+                console.log("news",data.news);
             });
     }, []);
 
@@ -25,6 +28,8 @@ export const NewsContainer = () => {
 
     return <div className='news'>
         <h3 className='news-heading'>TOP STORIES</h3>
+
+       
 
         <Container>
             {[...allnews.filter(({ image }) => {

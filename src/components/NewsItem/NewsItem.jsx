@@ -2,14 +2,14 @@ import React from 'react'
 import './newsItem.css'
 // import WhatHappening from './WhatHappening'
 
-export const NewsItem = ({ title, description, url, urlToImage ,author }) => {
+export const NewsItem = ({ title, description, url, image ,author }) => {
     return (
         
       
             
             <div className='main'>
             <div className='news-logo'>
-                <img className='news-img' src={urlToImage} alt={urlToImage} />
+                <img className='news-img' src={image} alt={image} />
 
                 </div>
                 
