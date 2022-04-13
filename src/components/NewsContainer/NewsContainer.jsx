@@ -9,12 +9,14 @@ import './NewsContainer.css'
 export const NewsContainer = () => {
 
     const [allnews, setAllnews] = useState([]);
+    const [main, setMain] = useState({})
 
 
     useEffect(() => {
         axios.get("https://api.currentsapi.services/v1/latest-news?language=en&apiKey=IJt6TvU_ZHI05_joE0kUd5lXou_KXO6g0TY25_iTXCaO1Evf")
             .then(({ data }) => {
                 setAllnews([...data.news]);
+                setMain(data.news[3])
             
                 console.log("news",data.news);
             });
@@ -26,19 +28,50 @@ export const NewsContainer = () => {
         grid-template-columns: repeat(4,23%);
     `
 
-    return <div className='news'>
-        <h3 className='news-heading'>TOP STORIES</h3>
+    const{image,title,category}=main
 
-       
+    return (
+      <div className="news">
+        <div className="hero-news-card">
+          <h1 className="breaking">Breaking News</h1>
+
+          <h1>{title}</h1>
+          <div className="hero-image-div">
+            <img
+              src={
+                image
+                  ? image
+                  : "https://upload.wikimedia.org/wikipedia/commons/7/78/Image.jpg"
+              }
+              alt=""
+            />
+          </div>
+          {/* 
+          <p>{category[0]}</p> */}
+        </div>
+
+     
+          {" "}
+          <h3 className="news-heading">TOP STORIES</h3>
+        
 
         <Container>
-            {[...allnews.filter(({ image }) => {
-                return image != "None"
-            })].map((ele) => {
-                return <Link to={`/entry/${ele.id}`} state={{ data: {ele} }} key={ele.id} >
-                    <NewsCard data={ele} />
-                </Link>
-            })}
+          {[
+            ...allnews.filter(({ image }) => {
+              return image != "None";
+            }),
+          ].map((ele) => {
+            return (
+              <Link
+                to={`/entry/${ele.id}`}
+                state={{ data: { ele } }}
+                key={ele.id}
+              >
+                <NewsCard data={ele} />
+              </Link>
+            );
+          })}
         </Container>
-    </div>
+      </div>
+    );
 }

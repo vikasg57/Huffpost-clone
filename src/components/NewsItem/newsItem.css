@@ -56,3 +56,17 @@
     text-decoration:none;
     color:black;;
 }
+
+.loader{
+    font-size:100px;
+    color:red;
+}
+
+.loader-div{
+    display:flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items:center;
+    width:100%;
+    height:600px;
+}
