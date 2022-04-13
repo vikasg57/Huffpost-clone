@@ -1,6 +1,8 @@
 import axios from "axios";
 import { useEffect, useState } from "react"
 
+import "../SideNews/Sidenews.css"
+
 
 
 export const SideNews = () => {
@@ -21,16 +23,15 @@ export const SideNews = () => {
           });
     }, [])
 
-    return <div className="side-news">
+    return (
+      <div className="side-news">
         <h4 className="news-heading">UKRAINE CRISIS</h4>
 
-        <div>
-            {
-                news.map((ele) => {
-                    return <h3 key={String(Math.random() * 10)}>{ele.title}</h3>
-                })
-            }
+        <div className="side-news_inner-div">
+          {news.map((ele) => {
+            return <h3 className="innercomponent" key={String(Math.random() * 10)}>{ele.title}</h3>
+          })}
         </div>
-
-    </div>
+      </div>
+    );
 }

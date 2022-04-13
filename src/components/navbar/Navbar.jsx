@@ -75,7 +75,7 @@ export const Navbar = ({ state }) => {
           <Link className="subnav__item" to="/news/trending">
             NEWS
           </Link>
-          <Link className="subnav__item" to="/news/politics">
+          <Link className="subnav__item" to="/news/politics/">
             POLITICS
           </Link>
           <Link className="subnav__item" to="/news/entertainment/">
